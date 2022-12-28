@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    color: burlywood;
+    border: none;
+}
+
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url(./image/danilo-alvesd-yRYERGK1n88-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+main section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #281808dc;
+    width: 500px;
+    min-height: 300px;
+    padding: 100px 0;
+    border-radius: 25px;
+    font-size: 40px;
+}
+
+
+#input_text {
+    padding: 2%;
+    border-radius: 12px;
+}
+
+
+button {
+    border-radius: 13px;
+    padding: 10px 30px;
+    background-color: burlywood;
+    color: #281808;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    filter: grayscale(0.4);
+    transform: scale(1.1);
+}
+
+#delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#task_list li {
+    min-width: 300px;
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-between;
+
+}
+
+
+
+.container .timer-buttons button {
+    border-radius: 13px;
+    padding: 10px 30px;
+    background-color: burlywood;
+    color: #281808;
+    transition: all 0.3s ease-in-out;
+}
+
+.container .timer-buttons button:hover {
+    filter: grayscale(0.4);
+    transform: scale(1.1);
+}
+
+.container .timer-buttons button p {
+    color: #281808;
+}
+
+@media (max-width:1000px) {
+    * {
+
+        font-size: 62.5%;
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .container {
+        width: 300px;
+        min-height: 100px;
+        padding: 100px 0;
+
+    }
+
+    .timer-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #task_list {
+        font-size: 35px;
+    }
+
+    #task_list li span {
+
+        font-size: 30px;
+    }
+}
+
+@media (max-width:500px) {
+    main section .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: #281808dc;
+        max-width: 300px;
+        min-height: 300px;
+        padding: 100px 0;
+        border-radius: 25px;
+    }
+}
