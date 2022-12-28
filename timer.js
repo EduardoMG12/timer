@@ -8,6 +8,13 @@ let minutes = 0;
 let hours = 0;
 let time;
 
+const updateTimer = () => {
+  timer.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
+    2,
+    "0"
+  )}`;
+};
+
 const clock = () => {
   seconds++;
   if (minutes == 59 && seconds == 59) {
@@ -18,23 +25,20 @@ const clock = () => {
     minutes++;
     seconds = 0;
   }
-  timer.textContent = `${String(hours).padStart(2, "0")}:${String(
-    minutes
-  ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  updateTimer();
 };
 
-const watchInit = () => {
-  if (time) {
-    return;
-  }
+const startClock = () => {
   clearInterval(time);
   clock();
   time = setInterval(clock, 1000);
 };
 
 init.addEventListener("click", (event) => {
-  watchInit();
   timer.style.removeProperty("color");
+  if (!time) {
+    startClock();
+  }
 });
 
 pause.addEventListener("click", (event) => {
@@ -50,5 +54,5 @@ reset.addEventListener("click", (event) => {
   hours = 0;
   clearInterval(time);
   time = undefined;
-  timer.textContent = "00:00:00";
+  updateTimer();
 });
